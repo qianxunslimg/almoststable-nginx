@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0f1115">
     <title>almoststable</title>
-    <link rel="icon" href="/favicon.svg?v=4" type="image/svg+xml">
-    <link rel="shortcut icon" href="/favicon.ico?v=4" type="image/svg+xml">
+    <link rel="icon" href="/favicon.svg?v=5" type="image/svg+xml">
+    <link rel="shortcut icon" href="/favicon.ico?v=5" type="image/svg+xml">
     <style>
       :root {
         color-scheme: dark;
@@ -30,12 +30,12 @@
       }
 
       main {
-        width: min(900px, calc(100vw - 40px));
+        width: min(960px, calc(100vw - 40px));
         min-height: 100vh;
         margin: 0 auto;
-        padding: 72px 0;
+        padding: clamp(56px, 11vh, 108px) 0 56px;
         display: grid;
-        align-content: center;
+        align-content: start;
         gap: 34px;
       }
 
@@ -117,6 +117,7 @@
       }
 
       .route {
+        min-width: 0;
         min-height: 168px;
         border: 1px solid #323b44;
         border-radius: 8px;
@@ -143,6 +144,7 @@
         justify-content: space-between;
         align-items: center;
         gap: 14px;
+        min-width: 0;
       }
 
       .icon {
@@ -165,8 +167,12 @@
       }
 
       .path {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
         color: #9da8b3;
         font: 650 15px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        white-space: nowrap;
       }
 
       .title {
@@ -193,7 +199,7 @@
 
       @media (max-width: 720px) {
         main {
-          width: min(100% - 28px, 900px);
+          width: min(900px, calc(100vw - 28px));
           padding: 38px 0;
           align-content: start;
         }
@@ -211,6 +217,10 @@
           min-height: 150px;
         }
 
+        .path {
+          display: none;
+        }
+
         h1 {
           font-size: 46px;
         }
@@ -226,10 +236,10 @@
       <section class="masthead" aria-label="almoststable">
         <div class="brand">
           <div class="mark" aria-hidden="true">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 11.4c3.2-3.4 6.2 3.4 9.3 0 3.1-3.3 5.8-3.3 8.7 0" stroke="#8CEBD6" stroke-width="2.7" stroke-linecap="round"/>
-              <path d="M6 18.8c3.2-3.4 6.2 3.4 9.3 0 3.1-3.3 5.8-3.3 8.7 0" stroke="#F4C95D" stroke-width="2.7" stroke-linecap="round"/>
-              <circle cx="23.6" cy="7" r="2.2" fill="#8CEBD6"/>
+            <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.5 19.5c3.1-6.4 5.5 4.5 8.6 0 2-3 3.7-3.1 5.4-1.1" stroke="#F4C95D" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M6.5 12.8h5.8c1.8 0 2.6-3.2 4.4-3.2h7.8" stroke="#8CEBD6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="24.5" cy="9.6" r="1.8" fill="#8CEBD6"/>
             </svg>
           </div>
           <h1>almost<span class="domain">stable</span></h1>
@@ -243,8 +253,10 @@
           <div class="route-top">
             <div class="icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18 12 5l8 13H4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                <path d="M8 18 12 5l4 13M7 13h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 17.5h16M6 17.5l3.2-8 3.2 8 3.2-8 3.2 8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9.2 9.5h6.4M7.2 14h9.6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+                <circle cx="9.2" cy="9.5" r="1.4" fill="currentColor"/>
+                <circle cx="15.6" cy="9.5" r="1.4" fill="currentColor"/>
               </svg>
             </div>
             <span class="path">/truss-engine/</span>
@@ -260,7 +272,10 @@
           <div class="route-top">
             <div class="icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 7h16M7 4v6M17 4v6M6 14h4v4H6v-4ZM14 14h4v4h-4v-4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5 7h14M5 12h14M5 17h14" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+                <circle cx="10" cy="7" r="2" fill="#15191F" stroke="currentColor" stroke-width="1.9"/>
+                <circle cx="15" cy="12" r="2" fill="#15191F" stroke="currentColor" stroke-width="1.9"/>
+                <circle cx="9" cy="17" r="2" fill="#15191F" stroke="currentColor" stroke-width="1.9"/>
               </svg>
             </div>
             <span class="path">/web-tools/</span>
