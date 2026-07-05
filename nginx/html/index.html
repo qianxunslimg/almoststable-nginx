@@ -185,9 +185,9 @@
 
       .routes {
         justify-self: center;
-        width: min(980px, calc(100vw - 36px));
+        width: min(1260px, calc(100vw - 36px));
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 12px;
         pointer-events: auto;
       }
@@ -339,11 +339,17 @@
         }
 
         .routes {
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
         .touch-controls {
           display: none;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .routes {
+          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -404,6 +410,21 @@
           </span>
         </a>
 
+        <a class="route" style="--accent: #a6e86d" href="/userscripts/" data-route="scripts">
+          <span class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 4.5h7.2c1.1 0 1.9.8 1.9 1.9v13.1H8.8c-1.6 0-2.9-1.3-2.9-2.9V6.6c0-1.2.9-2.1 2.1-2.1Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>
+              <path d="M9.2 9h4.8M9.2 12.4h5.8M9.2 15.8h3.4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+              <path d="M6 16.6c0-1.2 1-2.1 2.2-2.1h8.9" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="route-copy">
+            <span class="route-path">/userscripts/</span>
+            <span class="route-title">Userscripts</span>
+            <span class="route-subtitle">油猴脚本库</span>
+          </span>
+        </a>
+
         <a class="route" style="--accent: #f2a3b3" href="/blog/" data-route="blog">
           <span class="icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -434,11 +455,12 @@
           <p>这个入口需要 JavaScript 才能显示 3D 场景。</p>
           <a href="/truss-engine/">Truss Engine</a>
           <a href="/web-tools/">Web Tools</a>
+          <a href="/userscripts/">Userscripts</a>
           <a href="/blog/">Blog</a>
         </div>
       </div>
     </noscript>
 
-    <script type="module" src="/drive-scene.js?v=4"></script>
+    <script type="module" src="/drive-scene.js?v=5"></script>
   </body>
 </html>

@@ -11,6 +11,7 @@ services:
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - ./nginx/html:/usr/share/nginx/html:ro
       - ../truss-engine-web/frontend/dist:/srv/truss-engine:ro
+      - ../userscripts/dist:/srv/userscripts:ro
     ports:
       - "0.0.0.0:80:80"
     healthcheck:
