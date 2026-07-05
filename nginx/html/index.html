@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>almoststable.com</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #101418;
+        color: #f3f0e8;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+
+      main {
+        width: min(720px, calc(100vw - 40px));
+      }
+
+      h1 {
+        margin: 0 0 16px;
+        font-size: clamp(32px, 7vw, 56px);
+        font-weight: 650;
+      }
+
+      p {
+        margin: 0 0 28px;
+        color: #b8c0c8;
+        font-size: 18px;
+        line-height: 1.7;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .route-list {
+        display: grid;
+        gap: 14px;
+      }
+
+      .route {
+        border: 1px solid #303942;
+        border-radius: 8px;
+        padding: 16px 18px;
+        background: #171d23;
+      }
+
+      .path {
+        display: block;
+        margin-bottom: 8px;
+        color: #83d7c6;
+        font: 600 18px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+
+      .desc {
+        color: #c4cad0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>almoststable.com</h1>
+      <!-- <p>当前入口只做目录分发。每个模块互相独立，通过不同 URL 访问。</p> -->
+      <div class="route-list">
+        <a class="route" href="/truss-engine/">
+          <span class="path">/truss-engine/</span>
+          <span class="desc">桁架组合平台</span>
+        </a>
+        <a class="route" href="/web-tools/">
+          <span class="path">/web-tools/</span>
+          <span class="desc">个人 Web 工具集合</span>
+        </a>
+      </div>
+    </main>
+  </body>
+</html>
