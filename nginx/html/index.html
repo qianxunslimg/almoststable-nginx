@@ -3,82 +3,264 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>almoststable.com</title>
+    <meta name="theme-color" content="#0f1115">
+    <title>almoststable</title>
+    <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml">
+    <link rel="shortcut icon" href="/favicon.ico?v=3" type="image/svg+xml">
     <style>
       :root {
         color-scheme: dark;
-        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: #101418;
-        color: #f3f0e8;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #0f1115;
+        color: #f3efe6;
+      }
+
+      * {
+        box-sizing: border-box;
       }
 
       body {
         margin: 0;
         min-height: 100vh;
-        display: grid;
-        place-items: center;
+        background:
+          linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+          #0f1115;
+        background-size: 36px 36px;
       }
 
       main {
-        width: min(720px, calc(100vw - 40px));
+        width: min(900px, calc(100vw - 40px));
+        min-height: 100vh;
+        margin: 0 auto;
+        padding: 72px 0;
+        display: grid;
+        align-content: center;
+        gap: 34px;
       }
 
-      h1 {
-        margin: 0 0 16px;
-        font-size: clamp(32px, 7vw, 56px);
-        font-weight: 650;
+      .masthead {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 24px;
       }
 
-      p {
-        margin: 0 0 28px;
-        color: #b8c0c8;
-        font-size: 18px;
-        line-height: 1.7;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .route-list {
+      .brand {
         display: grid;
         gap: 14px;
       }
 
-      .route {
-        border: 1px solid #303942;
+      .mark {
+        width: 44px;
+        height: 44px;
+        border: 1px solid #3c454e;
         border-radius: 8px;
-        padding: 16px 18px;
-        background: #171d23;
+        display: grid;
+        place-items: center;
+        background: #15191f;
+        color: #8cebd6;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        font: 760 18px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 72px;
+        line-height: 0.92;
+        letter-spacing: 0;
+        font-weight: 760;
+      }
+
+      .domain {
+        color: #f4c95d;
+      }
+
+      .byline {
+        margin: -4px 0 0;
+        color: #8f9aa5;
+        font: 650 14px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        height: 34px;
+        padding: 0 13px;
+        border: 1px solid #343c45;
+        border-radius: 999px;
+        background: #14181d;
+        color: #b8c3cc;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+
+      .status::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #8cebd6;
+        box-shadow: 0 0 14px rgba(140, 235, 214, 0.55);
+      }
+
+      .routes {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .route {
+        min-height: 168px;
+        border: 1px solid #323b44;
+        border-radius: 8px;
+        padding: 22px;
+        background: rgba(20, 24, 29, 0.92);
+        color: inherit;
+        text-decoration: none;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        gap: 18px;
+        transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+      }
+
+      .route:hover,
+      .route:focus-visible {
+        transform: translateY(-2px);
+        border-color: #6f7e8c;
+        background: #181e25;
+        outline: none;
+      }
+
+      .route-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 8px;
+        display: grid;
+        place-items: center;
+        border: 1px solid currentColor;
+      }
+
+      .route.truss .icon {
+        color: #f4c95d;
+        background: rgba(244, 201, 93, 0.1);
+      }
+
+      .route.tools .icon {
+        color: #8cebd6;
+        background: rgba(140, 235, 214, 0.1);
       }
 
       .path {
-        display: block;
-        margin-bottom: 8px;
-        color: #83d7c6;
-        font: 600 18px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        color: #9da8b3;
+        font: 650 15px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       }
 
-      .desc {
-        color: #c4cad0;
+      .title {
+        margin: 0;
+        align-self: end;
+        font-size: 32px;
+        letter-spacing: 0;
+        line-height: 1.05;
+      }
+
+      .meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 14px;
+        color: #b9c2ca;
+        font-size: 15px;
+      }
+
+      .arrow {
+        font: 700 18px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        color: #f3efe6;
+      }
+
+      @media (max-width: 720px) {
+        main {
+          width: min(100% - 28px, 900px);
+          padding: 38px 0;
+          align-content: start;
+        }
+
+        .masthead {
+          align-items: start;
+          flex-direction: column;
+        }
+
+        .routes {
+          grid-template-columns: 1fr;
+        }
+
+        .route {
+          min-height: 150px;
+        }
+
+        h1 {
+          font-size: 46px;
+        }
+
+        .title {
+          font-size: 28px;
+        }
       }
     </style>
   </head>
   <body>
     <main>
-      <h1>almoststable.com</h1>
-      <!-- <p>当前入口只做目录分发。每个模块互相独立，通过不同 URL 访问。</p> -->
-      <div class="route-list">
-        <a class="route" href="/truss-engine/">
-          <span class="path">/truss-engine/</span>
-          <span class="desc">桁架组合平台</span>
+      <section class="masthead" aria-label="almoststable">
+        <div class="brand">
+          <div class="mark" aria-hidden="true">as</div>
+          <h1>almost<span class="domain">stable</span></h1>
+          <p class="byline">by qxslimg</p>
+        </div>
+        <div class="status">online</div>
+      </section>
+
+      <section class="routes" aria-label="service routes">
+        <a class="route truss" href="/truss-engine/">
+          <div class="route-top">
+            <div class="icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 18 12 5l8 13H4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M8 18 12 5l4 13M7 13h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="path">/truss-engine/</span>
+          </div>
+          <h2 class="title">Truss Engine</h2>
+          <div class="meta">
+            <span>桁架组合平台</span>
+            <span class="arrow">-></span>
+          </div>
         </a>
-        <a class="route" href="/web-tools/">
-          <span class="path">/web-tools/</span>
-          <span class="desc">个人 Web 工具集合</span>
+
+        <a class="route tools" href="/web-tools/">
+          <div class="route-top">
+            <div class="icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 7h16M7 4v6M17 4v6M6 14h4v4H6v-4ZM14 14h4v4h-4v-4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="path">/web-tools/</span>
+          </div>
+          <h2 class="title">Web Tools</h2>
+          <div class="meta">
+            <span>个人工具集合</span>
+            <span class="arrow">-></span>
+          </div>
         </a>
-      </div>
+      </section>
     </main>
   </body>
 </html>
