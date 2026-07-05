@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0f1115">
     <title>almoststable</title>
-    <link rel="icon" href="/avatar.png?v=1" type="image/png">
-    <link rel="shortcut icon" href="/favicon.ico?v=6" type="image/png">
-    <link rel="apple-touch-icon" href="/avatar.png?v=1">
+    <link rel="icon" href="/avatar.png?v=2" type="image/png">
+    <link rel="shortcut icon" href="/favicon.ico?v=7" type="image/png">
+    <link rel="apple-touch-icon" href="/avatar.png?v=2">
     <style>
       :root {
         color-scheme: dark;
@@ -62,12 +62,21 @@
       }
 
       .byline {
+        width: max-content;
         margin: -4px 0 0;
         display: inline-flex;
         align-items: center;
         gap: 9px;
         color: #8f9aa5;
         font: 650 14px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        text-decoration: none;
+        transition: color 160ms ease;
+      }
+
+      .byline:hover,
+      .byline:focus-visible {
+        color: #8cebd6;
+        outline: none;
       }
 
       .avatar {
@@ -204,10 +213,10 @@
       <section class="masthead" aria-label="almoststable">
         <div class="brand">
           <h1>almost<span class="domain">stable</span></h1>
-          <p class="byline">
-            <img class="avatar" src="/avatar.png?v=1" alt="" width="24" height="24">
+          <a class="byline" href="https://github.com/qianxunslimg" target="_blank" rel="noreferrer me">
+            <img class="avatar" src="/avatar.png?v=2" alt="" width="24" height="24">
             <span>by qxslimg</span>
-          </p>
+          </a>
         </div>
       </section>
 
