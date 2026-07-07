@@ -185,9 +185,9 @@
 
       .routes {
         justify-self: center;
-        width: min(1260px, calc(100vw - 36px));
+        width: min(1540px, calc(100vw - 36px));
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(5, minmax(0, 1fr));
         gap: 12px;
         pointer-events: auto;
       }
@@ -425,6 +425,20 @@
           </span>
         </a>
 
+        <a class="route" style="--accent: #7be263" href="/games/" data-route="games">
+          <span class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.5 9.2h9c2.1 0 3.8 1.7 3.8 3.8v2.2c0 1.7-1.4 3.1-3.1 3.1-.9 0-1.7-.4-2.3-1.1l-.9-1.1h-4l-.9 1.1c-.6.7-1.4 1.1-2.3 1.1-1.7 0-3.1-1.4-3.1-3.1V13c0-2.1 1.7-3.8 3.8-3.8Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>
+              <path d="M8.2 12.2v3M6.7 13.7h3M15.7 13.2h.1M17.9 15.1h.1" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="route-copy">
+            <span class="route-path">/games/</span>
+            <span class="route-title">Game Playset</span>
+            <span class="route-subtitle">网页游戏合集</span>
+          </span>
+        </a>
+
         <a class="route" style="--accent: #f2a3b3" href="/blog/" data-route="blog">
           <span class="icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -456,11 +470,12 @@
           <a href="/truss-engine/">Truss Engine</a>
           <a href="/web-tools/">Web Tools</a>
           <a href="/userscripts/">Userscripts</a>
+          <a href="/games/">Game Playset</a>
           <a href="/blog/">Blog</a>
         </div>
       </div>
     </noscript>
 
-    <script type="module" src="/drive-scene.js?v=5"></script>
+    <script type="module" src="/drive-scene.js?v=6"></script>
   </body>
 </html>
